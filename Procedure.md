@@ -27,7 +27,7 @@
 Upgrade the workload cluster to the latest Kubernetes version that is supported.
 - [ ] Test all the components to see if the services are working as expected.
 
-Repeate the same process for upgrading from `2.1.x` to `2.2.x` and then to `2.3.x`
+Repeat the same process for upgrading from `2.1.x` to `2.2.x` and then to `2.3.x`
 
 [Please refer here for the runbook.] (./Runbook.md)
 
