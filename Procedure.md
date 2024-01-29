@@ -26,3 +26,7 @@
 Repeate the same process for upgrading from `2.1.x` to `2.2.x` and then to `2.3.x`
 
 [Please refere Here for Rubbook](./Runbook.md)
+
+**Reference Links:**
+
+https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/2.1/tkg-deploy-mc/mgmt-upgrade-index.html
