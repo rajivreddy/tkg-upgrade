@@ -19,7 +19,7 @@
 - [ ] Upgrade Tanzu management cluster to the latest supported version.
 - [ ] Confirm the upgrade was successful.
 
-[Known Issues]([https://](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/2.1/tkg-deploy-mc/mgmt-release-notes.html#known-issues-upgrade))
+[Known Issues](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/2.1/tkg-deploy-mc/mgmt-release-notes.html#known-issues-upgrade))
 
 ### Upgrade Workload Clusters
 
