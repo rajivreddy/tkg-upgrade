@@ -29,7 +29,11 @@ Upgrade the workload cluster to the latest Kubernetes version that is supported.
 
 Repeat the same process for upgrading from `2.1.x` to `2.2.x` and then to `2.3.x`
 
-[Please refer here for the runbook.] (./Runbook.md)
+### Cleanup Resourses 
+
+- [ ] Delete Any unsued OVA tempaltes
+- [ ] Delete Any resoursed that are provisioned while upgrading(Nolonger needed).
+[Please refer here for the runbook.](./Runbook.md)
 
 **Reference:**
 
