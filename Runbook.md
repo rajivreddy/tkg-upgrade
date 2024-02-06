@@ -232,6 +232,10 @@ Succeeded
 
 update imgpkg
 ```bash
+imgpkg --version
+imgpkg version 0.29.0
+
+Succeeded
 ```
 
 ```bash
@@ -239,6 +243,9 @@ gunzip imgpkg-linux-amd64-v0.31.1+vmware.1.gz
 chmod ugo+x imgpkg-linux-amd64-v0.31.1+vmware.1
 sudo mv ./imgpkg-linux-amd64-v0.31.1+vmware.1 /usr/local/bin/imgpkg
 imgpkg --version
+imgpkg version 0.31.1
+
+Succeeded
 ```
 
 ### Download Supported OVA Image templates
