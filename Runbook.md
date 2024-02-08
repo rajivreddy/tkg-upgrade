@@ -70,7 +70,6 @@ Output 0 means command ran successfully
 
 **Initialise the Tanzu CLI:**
 
-
 **Note:** Make sure you delete `~/.config/tanzu/tkg/compatibility/tkg-compatibility.yaml` file before running `init` command
 
 ```bash
@@ -213,6 +212,7 @@ Succeeded
 ```
 
 update kbld
+
 ```bash
 kbld --version
 kbld version 0.34.0
@@ -231,6 +231,7 @@ Succeeded
 ```
 
 update imgpkg
+
 ```bash
 imgpkg --version
 imgpkg version 0.29.0
@@ -270,6 +271,15 @@ Repeat the procedure for each of the Kubernetes versions for which you have down
 ![OVA](./Images/ova-versions.png)
 
 ## Upgrade Management Cluster
+
 To upgrade Tanzu Kubernetes Grid, you must upgrade all management clusters in your deployment. You cannot upgrade workload clusters until you have upgraded the management clusters that manage them.
 
+[Pre Validation](./2.1.1/pre-validation-mgmt.md)
+This document covers the pre validation steps that needed to be run before upgrading management cluster
+[Upgrade and Post Validation](./2.1.1/management-cluster.md)
+This document covers Upgrade and Post validaton steps.
+
 ## Upgrade Workload Clusters
+
+[Upgrade and Validation](./2.1.1/workload-cluster.md)
+This document covers Process for upgrading and validation steps.

@@ -1,9 +1,13 @@
-```bash
-tanzu version
-version: v0.25.4
-buildDate: 2022-12-22
-sha: 8204f5b0d-dirty
-```
+## Pre validation before upgrading Management Cluster
+
+- [Pre validation before upgrading Management Cluster](#pre-validation-before-upgrading-management-cluster)
+  - [Login to Management Cluster](#login-to-management-cluster)
+  - [List all workload clusters available in management cluster](#list-all-workload-clusters-available-in-management-cluster)
+  - [Make sure your kubect context set to Management Cluster](#make-sure-your-kubect-context-set-to-management-cluster)
+  - [List Nodes in Management Cluster](#list-nodes-in-management-cluster)
+  - [List all the pods available in management cluster](#list-all-the-pods-available-in-management-cluster)
+
+### Login to Management Cluster
 
 ```bash
 tanzu login
@@ -13,6 +17,8 @@ Checking for required plugins...
 All required plugins are already installed and up-to-date
 ```
 
+### List all workload clusters available in management cluster
+
 ```bash
 tanzu cluster list
   NAME                 NAMESPACE  STATUS         CONTROLPLANE  WORKERS  KUBERNETES         ROLES   PLAN  TKR
@@ -21,8 +27,10 @@ tanzu cluster list
   tkg-staging-cluster  default    running        1/1           2/2      v1.23.10+vmware.1  <none>  dev   v1.23.10---vmware.1-tkg.1
   tkg-test-cluster     default    running        1/1           2/2      v1.23.10+vmware.1  <none>  dev   v1.23.10---vmware.1-tkg.1
   tkg-uat-cluster      default    createStalled  0/1           0/1      v1.21.2+vmware.1   <none>  dev   v1.21.2---vmware.1-tkg.1
-[vmadmin@relprdvjhorb01 2.1.1]$
+
 ```
+
+### Make sure your kubect context set to Management Cluster
 
 ```bash
 contexts
@@ -40,9 +48,14 @@ CURRENT   NAME                                                                  
           tkg-staging-cluster-admin@tkg-staging-cluster                         tkg-staging-cluster             tkg-staging-cluster-admin
           tkg-test-cluster-admin@tkg-test-cluster                               tkg-test-cluster                tkg-test-cluster-admin
           tkg-uat-cluster-admin@tkg-uat-cluster                                 tkg-uat-cluster                 tkg-uat-cluster-admin
-[vmadmin@relprdvjhorb01 2.1.1]$ kcu nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster
+kubectl config use-context nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster
 Switched to context "nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster".
-[vmadmin@relprdvjhorb01 2.1.1]$ kg nodes
+```
+
+### List Nodes in Management Cluster
+
+```bash
+kubectl get nodes
 NAME                                                 STATUS   ROLES                  AGE    VERSION
 nprod-tkg-management-cluster-control-plane-jqn2s     Ready    control-plane,master   313d   v1.23.10+vmware.1
 nprod-tkg-management-cluster-control-plane-k8bvn     Ready    control-plane,master   313d   v1.23.10+vmware.1
@@ -50,6 +63,7 @@ nprod-tkg-management-cluster-control-plane-prswj     Ready    control-plane,mast
 nprod-tkg-management-cluster-md-0-7644b894fc-p6p65   Ready    <none>                 313d   v1.23.10+vmware.1
 ```
 
+### List all the pods available in management cluster
 
 ```bash
 allpods
@@ -117,4 +131,3 @@ tkg-system                          tanzu-capabilities-controller-manager-7c5c75
 tkg-system                          tanzu-featuregates-controller-manager-6d8bf47c55-499z5                     1/1     Running            0                   313d
 tkr-system                          tkr-controller-manager-f46b458fd-vrml7                                     0/1     CrashLoopBackOff   71054 (2m57s ago)   313d
 ```
-

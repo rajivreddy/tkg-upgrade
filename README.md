@@ -2,9 +2,7 @@
 
 - [Procedure](./Procedure.md)
 - [Runbook](./Runbook.md)
-  - [Pre-reqs](./Runbook.md)
-  - [Management Cluster](./Runbook.md)
-  - [Workload Cluster](./Runbook.md)
-
-
-[text](https://)
+  - [Install/Upgrade Tanzu CLI](./Runbook.md#installupdate-tanzu-cli)
+  - [Update caravel and Kubectl](./Runbook.md#update-the-carvel-tools-and-kubectl)
+  - [Management Cluster](./Runbook.md#upgrade-management-cluster)
+  - [Workload Cluster](./Runbook.md#upgrade-workload-clusters)

@@ -1,5 +1,13 @@
 # Upgrade TKG Cluster from 1.6.x to 2.3.x
 
+- [Upgrade TKG Cluster from 1.6.x to 2.3.x](#upgrade-tkg-cluster-from-16x-to-23x)
+  - [Upgrade Path](#upgrade-path)
+    - [Process to Upgrade TKG Cluster](#process-to-upgrade-tkg-cluster)
+    - [Update Tanzu CLI](#update-tanzu-cli)
+    - [Upgrade Management Cluster](#upgrade-management-cluster)
+    - [Upgrade Workload Clusters](#upgrade-workload-clusters)
+    - [Cleanup Resourses](#cleanup-resourses)
+
 ## Upgrade Path
 
 ![workflow](./Images/Workflow.drawio.png)
@@ -29,11 +37,10 @@ Upgrade the workload cluster to the latest Kubernetes version that is supported.
 
 Repeat the same process for upgrading from `2.1.x` to `2.2.x` and then to `2.3.x`
 
-### Cleanup Resourses 
+### Cleanup Resourses
 
 - [ ] Delete Any unsued OVA tempaltes
 - [ ] Delete Any resoursed that are provisioned while upgrading(Nolonger needed).
-
 
 [Please refer here for the runbook.](./Runbook.md)
 

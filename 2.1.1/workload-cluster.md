@@ -1,6 +1,13 @@
 # Upgrade workload cluster
 
-### Pre Deployment validation
+- [Upgrade workload cluster](#upgrade-workload-cluster)
+    - [Pre Upgrade validation](#pre-upgrade-validation)
+    - [Upgrade](#upgrade)
+    - [List all the pods and Httpproxy in the dev cluster](#list-all-the-pods-and-httpproxy-in-the-dev-cluster)
+    - [How to Delete a workload cluster](#how-to-delete-a-workload-cluster)
+
+### Pre Upgrade validation
+
 Before upgrading workload cluster, get the status of clusters that are part of manamagement cluster
 
 ```bash
@@ -42,9 +49,10 @@ CURRENT   NAME                                                                  
           tkg-staging-cluster-admin@tkg-staging-cluster                         tkg-staging-cluster             tkg-staging-cluster-admin
           tkg-test-cluster-admin@tkg-test-cluster                               tkg-test-cluster                tkg-test-cluster-admin
           tkg-uat-cluster-admin@tkg-uat-cluster                                 tkg-uat-cluster                 tkg-uat-cluster-admin
-[vmadmin@relprdvjhorb01 2.1.1]$ kcu nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster
+[vmadmin@relprdvjhorb01 2.1.1]$ kubectl config use-context nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster
 Switched to context "nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster".
 ```
+
 List all the pods and Httpproxy and the status
 
 ```bash
@@ -207,7 +215,6 @@ notification-dev          notification-portal-httpproxy   dev-notificationportal
 tanzu-system-dashboards   grafana-httpproxy               rel-devv-grafana.convergeict.com         grafana-tls                   valid    Valid HTTPProxy
 
 ```
-
 
 To discover which versions of Kubernetes are made available by a management cluster, run the `tanzu kubernetes-release get command`:
 
