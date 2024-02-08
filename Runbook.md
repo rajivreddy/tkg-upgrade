@@ -7,7 +7,10 @@
     - [Update the Carvel Tools and kubectl](#update-the-carvel-tools-and-kubectl)
     - [Download Supported OVA Image templates](#download-supported-ova-image-templates)
   - [Upgrade Management Cluster](#upgrade-management-cluster)
+    - [Pre Validation](#pre-validation)
+    - [Upgrade and Post Validation](#upgrade-and-post-validation)
   - [Upgrade Workload Clusters](#upgrade-workload-clusters)
+    - [Upgrade and Validation](#upgrade-and-validation)
 
 ## Install/Update Tanzu CLI
 
@@ -274,12 +277,16 @@ Repeat the procedure for each of the Kubernetes versions for which you have down
 
 To upgrade Tanzu Kubernetes Grid, you must upgrade all management clusters in your deployment. You cannot upgrade workload clusters until you have upgraded the management clusters that manage them.
 
-[Pre Validation](./2.1.1/pre-validation-mgmt.md)
+### [Pre Validation](./2.1.1/pre-validation-mgmt.md)
+
 This document covers the pre validation steps that needed to be run before upgrading management cluster
-[Upgrade and Post Validation](./2.1.1/management-cluster.md)
+
+### [Upgrade and Post Validation](./2.1.1/management-cluster.md)
+
 This document covers Upgrade and Post validaton steps.
 
 ## Upgrade Workload Clusters
 
-[Upgrade and Validation](./2.1.1/workload-cluster.md)
+### [Upgrade and Validation](./2.1.1/workload-cluster.md)
+
 This document covers Process for upgrading and validation steps.
