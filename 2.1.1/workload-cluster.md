@@ -1,10 +1,10 @@
 # Upgrade workload cluster
 
 - [Upgrade workload cluster](#upgrade-workload-cluster)
-    - [Pre Upgrade validation](#pre-upgrade-validation)
-    - [Upgrade](#upgrade)
-    - [List all the pods and Httpproxy in the dev cluster](#list-all-the-pods-and-httpproxy-in-the-dev-cluster)
-    - [How to Delete a workload cluster](#how-to-delete-a-workload-cluster)
+  - [Pre Upgrade validation](#pre-upgrade-validation)
+  - [Upgrade](#upgrade)
+  - [List all the pods and Httpproxy in the dev cluster](#list-all-the-pods-and-httpproxy-in-the-dev-cluster)
+  - [How to Delete a workload cluster](#how-to-delete-a-workload-cluster)
 
 ### Pre Upgrade validation
 
@@ -53,7 +53,7 @@ CURRENT   NAME                                                                  
 Switched to context "nprod-tkg-management-cluster-admin@nprod-tkg-management-cluster".
 ```
 
-List all the pods and Httpproxy and the status
+List all the pods and Httpproxy and the cuurent running state
 
 ```bash
 kubectl get pods -A
@@ -196,9 +196,9 @@ vmware-system-tmc         policy-insight-extension-manager-9d8f886c8-gk8zs      
 vmware-system-tmc         policy-sync-extension-7c6b44b599-78vn9                        1/1     Running            0              4m42s
 vmware-system-tmc         sync-agent-6bb458666c-xf95v                                   1/1     Running            0              9m2s
 vmware-system-tmc         tmc-observer-7d79f484c4-dgqzg                                 1/1     Running            0              11m
+```
 
-
-
+```bash
 kubectl get  httpproxy -A
 NAMESPACE                 NAME                            FQDN                                     TLS SECRET                    STATUS   STATUS DESCRIPTION
 baas-dev                  baas-httpproxy                  dev-baas.convergeict.com                 convergeict-2024-tls-secret   valid    Valid HTTPProxy
@@ -253,7 +253,7 @@ Run the `tanzu cluster upgrade` command and enter y to confirm. To skip the conf
 Command:
 
 ```bash
-tanzu cluster upgrade {{ CLUSTER-NAME }} {{ TKR_VERSION }}
+tanzu cluster upgrade {{ CLUSTER-NAME }} {{ TKR_VERSION }} -v 9
 ```
 
 ```bash
@@ -309,7 +309,7 @@ tanzu cluster list
 
 ```bash
  tkg-dev-cluster      default    running        1/1           4/4      v1.24.10+vmware.1  <none>  dev   v1.24.10---vmware.1-tkg.2
- ```
+```
 
 ### List all the pods and Httpproxy in the dev cluster
 
@@ -494,7 +494,7 @@ tanzu cluster delete {{ CLUSTER_NAME }}
 
 ```bash
 
- tanzu cluster delete tkg-uat-cluster
+tanzu cluster delete tkg-uat-cluster
 Deleting workload cluster 'tkg-uat-cluster'. Are you sure? [y/N]: y
 Workload cluster 'tkg-uat-cluster' is being deleted
 
